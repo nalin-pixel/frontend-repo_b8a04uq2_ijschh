@@ -1,26 +1,22 @@
-import { useState } from 'react'
+import React from 'react'
+import BikeViewer from './components/BikeViewer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-slate-50 to-white">
+      <header className="p-4 sm:p-6 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-lg bg-gray-900" />
+          <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">3D Bike Painter — R15 v2</h1>
         </div>
-      </div>
+        <a href="/test" className="text-sm text-gray-600 hover:text-gray-900">Test Backend</a>
+      </header>
+
+      <main className="flex-1">
+        <BikeViewer />
+      </main>
+
+      <footer className="p-4 text-center text-xs text-gray-500">Tip: Pick a part then choose a color to paint that section.</footer>
     </div>
   )
 }
